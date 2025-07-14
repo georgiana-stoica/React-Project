@@ -13,12 +13,7 @@ function App() {
                 {/* Should contain one Skill component
         for each web dev skill that you have,
         customized with props */}
-                <div className="skill-list">
-                    <SkillList skill="Java" emoji="💪" color="blue"/>
-                    <SkillList skill="HTML" emoji="👍" color="orange"/>
-                    <SkillList skill="CSS" emoji="👍" color="yellow"/>
-                    <SkillList skill="JavaScript" emoji="💪" color="red"/>
-                </div>
+                <SkillList/>
             </div>
         </div>
     );
@@ -30,7 +25,16 @@ function Avatar() {
     </div>);
 }
 
-function SkillList(props) {
+function SkillList() {
+    return (<div className="skill-list">
+        <Skill skill="Java" emoji="💪" color="blue"/>
+        <Skill skill="HTML" emoji="👍" color="orange"/>
+        <Skill skill="CSS" emoji="👍" color="yellow"/>
+        <Skill skill="JavaScript" emoji="💪" color="red"/>
+    </div>);
+}
+
+function Skill(props) {
     return (<div className="skill" style={{backgroundColor: props.color}}>
         <p>
             <span>{props.skill} {props.emoji}</span>
